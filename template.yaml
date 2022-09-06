@@ -23,7 +23,7 @@ Resources:
       Description: 'Servico para excluir uma empresa'
       MemorySize: 128
       Timeout: 3
-      Role: 'arn:aws:iam::{AWS::AccountId}:role/LambdaFunctionsRole'
+      Role: 'arn:aws:iam::${AWS::AccountId}:role/LambdaFunctionsRole'
       Environment:
         Variables:
           TABLE: 'company'
@@ -102,7 +102,7 @@ Resources:
             - Effect: "Allow"
               Action:
                 - "lambda:InvokeFunction"
-              Resource: "arn:aws:lambda:sa-east-1:{AWS::AccountId}:function:testIntegrationCompany"
+              Resource: "arn:aws:lambda:sa-east-1:${AWS::AccountId}:function:testIntegrationCompany"
       Runtime: nodejs12.x
       DeploymentPreference:
         Enabled: false
